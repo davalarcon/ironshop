@@ -1,0 +1,26 @@
+<h2>FILL OUT TO CREATE A NEW PRODUCT</h2>
+
+<form method="post" action="/products">
+  <label for="product-name-input">Name of Product</label>
+  <input id="product-name-input" type="text" name="productName">
+                                             <!-- req.body.productName -->
+  <br>
+  <label for="product-price-input">Price:</label>
+  <input id="product-price-input" type="number" step="0.1" name="productPrice">
+                                                     <!-- req.body.productPrice -->
+  <br>
+  <label for="product-image-input">Image URL</label>
+  <input id="product-image-input" type="url" name="productImageUrl">
+                                            <!-- req.body.productImageUrl -->
+  <br>
+  <label for="product-description-input">Description</label>
+  <textarea id="product-description-input" name="productDescription" rows="8" cols="80"></textarea>
+                                           <!-- req.body.productDescription -->
+  <br>
+  <button>Add this Product</button>
+</form>
+
+<!-- for = needs to be the same as id = (its is mainly for user experience)
+      action= is the route where you want all these info to go to.
+      id = needs to be the same as for = (its is mainly for user experience)
+      name =  what controls how we are going to get this info back-->
