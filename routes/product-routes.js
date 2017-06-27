@@ -91,9 +91,6 @@ router.get('/products/edit', (req, res, next)=>{
 //        |             --------------
 //        |            |
 router.post('/products/update', (req, res, next)=>{
-
-
-
   Product.findByIdAndUpdate(
     req.query.myId,               //1st Argument -> id of document to update
 
@@ -114,7 +111,31 @@ router.post('/products/update', (req, res, next)=>{
 
 });
 
+// router.get('/products/delete', (req, res, next)=>{
+//   Product.findByIdAndRemove(
+//     req.query.myId,
+//     (err, productFromDb) => {
+//       if(err){
+//         next(err);
+//         return;
+//       }
+//       res.redirect('/products/');
+//     }
+//   );
+// });
 
+router.post('/products/delete', (req, res, next)=>{
+  Product.findByIdAndRemove(
+    req.query.myId,
+    (err, productFromDb) => {
+      if(err){
+        next(err);
+        return;
+      }
+      res.redirect('/products/');
+    }
+  );
+});
 
 
 module.exports = router;

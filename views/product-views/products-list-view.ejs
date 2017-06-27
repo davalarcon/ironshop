@@ -11,6 +11,13 @@
       <br>
       <a href="/products/edit?myId=<%=oneProduct._id%>">Edit Details</a>
       <br>
+
+      <a href="/products/delete?myId=<%=oneProduct._id%>">Delete Link</a>
+      <br>
+      <form action="/products/delete?myId=<%=oneProduct._id%>" method="post">
+        <button>Delete Button (post)</button>
+
+      </form>
     </li>
 <%  }); %>
 </ul>
