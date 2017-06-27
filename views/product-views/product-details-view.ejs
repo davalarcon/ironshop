@@ -7,3 +7,11 @@
 <p> $<%= productDetails.price %></p>
 
 <p>  <%= productDetails.description %> </p>
+
+<a href="/products/<%=productDetails._id%>/edit">Edit Details</a>
+<br>
+
+<!-- <a href="/products/<%=productDetails._id%>/delete">Delete Link</a> -->
+<br>
+<form action="/products/<%=productDetails._id%>/delete" method="post">
+  <button>Delete Button (post)</button>

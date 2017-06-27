@@ -1,21 +1,21 @@
 <h2>FILL OUT TO CREATE A NEW PRODUCT</h2>
 
 <form method="post" action="/products">
-  <label for="product-name-input">Name of Product</label>
+  <label for="product-name-input">Name of Product</label><br>
   <input id="product-name-input" type="text" name="productName">
                                              <!-- req.body.productName -->
   <br>
-  <label for="product-price-input">Price:</label>
-  <input id="product-price-input" type="number" step="0.1" name="productPrice">
+  <label for="product-price-input">Price:</label><br>
+  <input id="product-price-input" type="number" step="0.01" name="productPrice">
                                                      <!-- req.body.productPrice -->
   <br>
-  <label for="product-image-input">Image URL</label>
+  <label for="product-image-input">Image URL</label><br>
   <input id="product-image-input" type="url" name="productImageUrl">
                                             <!-- req.body.productImageUrl -->
   <br>
-  <label for="product-description-input">Description</label>
+  <label for="product-description-input">Description</label><br>
   <textarea id="product-description-input" name="productDescription" rows="8" cols="80"></textarea>
-                                           <!-- req.body.productDescription -->
+                                         <!-- req.body.productDescription -->
   <br>
   <button>Add this Product</button>
 </form>

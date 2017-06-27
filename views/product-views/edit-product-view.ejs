@@ -2,7 +2,7 @@
 
 
 
-<form method="post" action="/products/update?myId=<%=  productDetails._id %>">
+<form method="post" action="/products/<%=  productDetails._id %>/update">
   <label for="product-name-input">Product name detal</label>
   <input id="product-name-input" type="text" name="productName" value="<%= productDetails.name %>">
   <br>
