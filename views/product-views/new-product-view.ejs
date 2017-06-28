@@ -1,10 +1,23 @@
 <h2>FILL OUT TO CREATE A NEW PRODUCT</h2>
 
+<!-- <ul>
+  for (let fieldName in validationErrors){
+    <li> validationErrors[fieldName].message</li>
+  }
+</ul> -->
+
 <form method="post" action="/products">
+  <% if (typeof nameValidationErrors==='object') { %>
+    <p class = 'error'> <%= nameValidationErrors.message %> </p>
+  <% } %>
   <label for="product-name-input">Name of Product</label><br>
   <input id="product-name-input" type="text" name="productName">
                                              <!-- req.body.productName -->
   <br>
+
+  <% if (typeof priceValidationErrors==='object') { %>
+    <p class = 'error'> <%= priceValidationErrors.message %> </p>
+  <% } %>
   <label for="product-price-input">Price:</label><br>
   <input id="product-price-input" type="number" step="0.01" name="productPrice">
                                                      <!-- req.body.productPrice -->

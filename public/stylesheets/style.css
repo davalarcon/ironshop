@@ -12,3 +12,16 @@ li{
   width: 400px;
   border: solid black;
 }
+
+#reviews{
+  /*display: inline-block;*/
+  width: 200px;
+  border: solid black;
+}
+
+.error{
+  border: 1px solid red;
+  color: red;
+  border-radius: 3px;
+  padding: 10px;
+}

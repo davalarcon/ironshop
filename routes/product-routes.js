@@ -37,12 +37,24 @@ router.post('/products', (req, res, next)=>{
     description: req.body.productDescription,
   });
 
+
   theProduct.save((err)=>{
-    if (err){
+    //if there was an errr that was NOT a validation error
+    if (err && theProduct.errors === undefined ){
       next(err);
       return;
     }
+    //if there was an error and THERE WERE validation errors
+    if (err && theProduct.errors){
+      // Create view variables with the error messages
+      res.locals.nameValidationErrors = theProduct.errors.name;
+      res.locals.priceValidationErrors = theProduct.errors.price;
 
+
+      //And display the page again.
+      res.render('product-views/new-product-view.ejs');
+      return;
+    }
     // if successful, redirect to a URL not a render view.
     // (redirect is STEP#3 of form submission for a new product)
     res.redirect('/products');

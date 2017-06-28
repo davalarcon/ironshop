@@ -40,6 +40,9 @@ app.use('/', index);
 const myProductRoutes = require ('./routes/product-routes.js');
 app.use('/', myProductRoutes);
 
+const myReviewsRoutes = require ('./routes/review-routes.js');
+app.use('/', myReviewsRoutes);
+
 //-----------------------------------------
 
 

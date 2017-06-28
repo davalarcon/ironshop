@@ -1,0 +1,22 @@
+<h2>NEW REVIEW</h2>
+
+<p> Wrinte a Review for <i> <%= productDetails.name %> </i> </p>
+
+<form method="post" action="/products/<%= productDetails._id %>/reviews">
+
+  <% if (typeof authorValidationErrors==='object') { %>
+    <p class = 'error'> <%= authorValidationErrors.message %> </p>
+  <% } %>
+
+  <label for="author-input">Author:</label><br>
+  <input type="text" name="reviewAuthor" id="author-input"><br>
+
+  <label for="stars-input">How many starts (1-5):</label><br>
+  <input type="number" name="reviewStars" id="stars-input"><br>
+
+  <label for="content-input">Write your Review:</label><br>
+  <textarea type="text" name="reviewContent" id="content-input">
+    </textarea>
+    <br>
+    <button> Submit </button>
+  </form>

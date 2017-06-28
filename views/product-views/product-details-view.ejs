@@ -8,6 +8,29 @@
 
 <p>  <%= productDetails.description %> </p>
 
+<hr>
+<section>
+  <%  if(productDetails.reviews.length === 0){ %>
+      <h3> Be the first one to review </h3>
+  <%  } else { %>
+      <h3>Reviews</h3>
+
+      <ul>
+      <%  productDetails.reviews.forEach((oneReview)=>{ %>
+        <li id='reviews'>
+          <h4> <%= oneReview.author %></h4>
+          <p> <%=   oneReview.stars %> out of 5</p>
+          <p>  <%=  oneReview.content %></p>
+        </li>
+      <%  });  %>
+      </ul>
+  <%  }  %>
+  <a href="/products/<%= productDetails._id %>/reviews/new">Review this Product</a>
+  <br>
+
+</section>
+</hr>
+
 <a href="/products/<%=productDetails._id%>/edit">Edit Details</a>
 <br>
 
